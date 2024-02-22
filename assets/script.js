@@ -13,8 +13,21 @@ function getCriteria() {
 
   // Prompt user for password length until valid input is received
   do {
-    length = Number(parseInt(prompt("Enter password length (8-128):")))
-  } while (!(length >= 8 && length <= 128));
+    // Prompt for password length
+    let input = prompt("Enter password length (8-128):");
+    // Convert input to a number
+    length = Number.parseInt(input);
+    // Check if input is a number and within the specified range
+    if (Number.isInteger(length) && length >= 8 && length <= 128) {
+      // Break the loop if valid input is received
+      break;
+    } else {
+      // Display an error message if input is invalid
+      alert("Please enter a whole number between 8 and 128.");
+    }
+  } while (true);
+
+  criteria[0] = length;
   
   // Prompt user for character types inclusion until at least one is selected
   criteria[0] = length;
