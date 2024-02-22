@@ -1,19 +1,10 @@
 // Assignment code here
-// const uppers = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-// const uppers = Array.from({length: 26}, (_, i) => String.fromCharCode(65 + i));
 
-//set arrays for elible characters to add to password
+//set arrays for eligible characters to add to password
 const uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowers = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const numbers = '1234567890'.split('');
 const special = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'.split('');
-
-// const characters = {
-//   uppers: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-//   lowers: 'abcdefghijklmnopqrstuvwxyz',
-//   numbers: '1234567890',
-//   special: '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~',
-// }
 
 function getCriteria() {
   let criteria = [0, false, false, false, false];
