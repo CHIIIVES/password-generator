@@ -4,7 +4,7 @@
 const uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowers = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const numbers = '1234567890'.split('');
-const special = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'.split('');
+const special = ' !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'.split('');
 
 function getCriteria() {
   let criteria = [0, false, false, false, false];
