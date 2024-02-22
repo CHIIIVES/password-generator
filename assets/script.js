@@ -1,20 +1,24 @@
 // Assignment code here
 
-//set arrays for eligible characters to add to password
+// Define arrays for eligible characters to add to password
 const uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowers = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const numbers = '1234567890'.split('');
 const special = ' !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'.split('');
 
+// Function to prompt user for password criteria
 function getCriteria() {
+  // Initialize criteria array with default values
   let criteria = [0, false, false, false, false];
 
   let length = 0;
 
+  // Prompt user for password length until valid input is received
   do {
     length = Number(parseInt(prompt("Enter password length (8-128):")))
   } while (!(length >= 8 && length <= 128));
   
+  // Prompt user for character types inclusion until at least one is selected
   criteria[0] = length;
   while (!criteria.includes(true)) {
     alert("Please include at least one criteria for your password");
@@ -28,6 +32,7 @@ function getCriteria() {
   return criteria;
 }
 
+// Functions to generate random characters
 function genUpper() {
   return uppers[Math.floor(Math.random()*uppers.length)];
 }
@@ -44,21 +49,22 @@ function genSpecial() {
   return special[Math.floor(Math.random()*special.length)];
 }
 
+// Function to generate password based on criteria
 function generatePassword() {
   const criteria = getCriteria();
   let passString = "";
 
-  // add a character to passString based on length stored in criteria[0]
+  // Generate password characters based on length and selected criteria
   for (let i = 0; i < criteria[0]; i++){
     let executed = false;
 
-    // assign generators to functArray
+    // Assign generators to functArray
     const functArray = [genUpper(), genLower(), genNumber(), genSpecial()];
 
-    // pick index from functarray
+    // Pick index from functArray randomly
     let randomIndex = Math.floor(Math.random() * 4);
 
-    // execute at least once if the criteria is true
+    // Ensure at least one character type is executed if the criteria is true
     do {
       randomIndex = Math.floor(Math.random() * 4);
       if (criteria[randomIndex + 1]) {
