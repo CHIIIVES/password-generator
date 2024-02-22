@@ -1,5 +1,3 @@
-// Assignment code here
-
 // Define arrays for eligible characters to add to password
 const uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowers = 'abcdefghijklmnopqrstuvwxyz'.split('');
